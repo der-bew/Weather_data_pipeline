@@ -5,12 +5,9 @@ Weather Data Processing Pipeline
 This script processes weather data from a CSV file, performs cleaning and transformation,
 and saves the results to output files.
 """
-import os
-from datetime import datetime
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
 

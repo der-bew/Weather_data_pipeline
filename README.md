@@ -1,6 +1,6 @@
 # Weather Data Processing Pipeline
 
-A Python-based data pipeline for processing weather data from CSV files. The pipeline performs data cleaning, transformation, and analysis, then generates output files with the processed data.
+This project implements a simple data pipeline to ingest, clean, transform, and analyze weather data from a CSV file. The processed data is saved as a new CSV file, and an optional report and a bar chart are generated.
 
 ## Features
 
@@ -15,13 +15,13 @@ A Python-based data pipeline for processing weather data from CSV files. The pip
 - Python 3.7+
 - pandas
 - numpy
-- matplotlib (for visualization)
+- matplotlib and Seaborn (for visualization)
 
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/der-bew/Weather_data_pipeline.git
    cd Weather_data_pipeline
    ```
 
@@ -51,6 +51,8 @@ A Python-based data pipeline for processing weather data from CSV files. The pip
 Weather_data_pipeline/
 ├── data/
 │   └── weather_data.csv       # Input data
+├── tests/
+│   └── test_weather_pipeline.py # Test file for interactive analysis
 ├── outputs/                   # Output files
 ├── weather_pipeline.py        # Main pipeline script
 ├── requirements.txt           # Dependencies

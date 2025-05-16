@@ -85,4 +85,4 @@ Weather_data_pipeline/
 
 The `avg_temperature_by_city.png` image file will be generated in the `outputs/` folder. It will display a bar chart visualizing the average `temperature_celsius` for each city present in the final processed data.
 
-![Average Temperature by City](avg_temperature_by_city.png)
+![Average Temperature by City](outputs/avg_temperature_by_city.png)

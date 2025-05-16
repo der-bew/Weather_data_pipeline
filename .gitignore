@@ -27,6 +27,8 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -95,7 +97,7 @@ ipython_config.py
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly not recommended for libraries.
+#   commonly not needed for library packages.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
 #poetry.lock
 
@@ -107,7 +109,7 @@ ipython_config.py
 #   https://pdm.fming.dev/#use-with-ide
 .pdm.toml
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
 # Celery stuff
@@ -158,39 +160,17 @@ cython_debug/
 .idea/
 
 # VS Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# Jupyter Notebook
-.ipynb_checkpoints
+.vscode/
 
 # Local development
-*.log
-local_settings.py
+*.swp
+*~
 
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Data files
-# *.csv
-*.xlsx
-*.db
-*.sqlite3
-
-# Logs
-logs/
-*.log
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Project specific
+output/
+data/*.csv
+!data/example.csv
+.coverage
+htmlcov/
+.pytest_cache/
+.ruff_cache/

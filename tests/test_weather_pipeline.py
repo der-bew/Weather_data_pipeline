@@ -2,15 +2,13 @@
 """
 Tests for the Weather Data Processing Pipeline.
 """
-import os
-import unittest
-import pandas as pd
-import numpy as np
-from pathlib import Path
-from unittest.mock import patch, MagicMock
-
 # Add parent directory to path to import the pipeline
 import sys
+import unittest
+from pathlib import Path
+
+import pandas as pd
+
 sys.path.append(str(Path(__file__).parent.parent))
 
 from weather_pipeline import WeatherDataPipeline

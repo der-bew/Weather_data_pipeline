@@ -1,6 +1,7 @@
 # Weather Data Processing Pipeline
 
 This project implements a simple data pipeline to ingest, clean, transform, and analyze weather data from a CSV file. The processed data is saved as a new CSV file, and an optional report and a bar chart are generated.
+[Read the detailed Analysis Report](https://docs.google.com/document/d/1W_1115ldNuhgLYnRRNkRyYsy8vEtErHYqj_LgApXn6I/edit?usp=sharing)
 
 ## Features
 

@@ -75,10 +75,14 @@ Weather_data_pipeline/
    - Generates city-wise summaries
    - Creates a report of top 5 warmest cities
    - Produces a bar chart of average temperatures by city
-5. **Chart Generation (`generate_temperature_chart` - Bonus Task):**
-    *   A bar chart image (`outputs/avg_temperature_by_city.png`) is created using Matplotlib/Seaborn, showing the average `temperature_celsius` for each city. Handles empty data scenarios.
 ## Challenges Faced
 
 1. **Date Parsing**: Handled multiple date formats in the input data.
 2. **Missing Data**: Implemented city-wise imputation for missing values.
 3. **Data Validation**: Added checks for required columns and data quality.
+
+## Sample Output (Bonus Visualization)
+
+The `avg_temperature_by_city.png` image file will be generated in the `outputs/` folder. It will display a bar chart visualizing the average `temperature_celsius` for each city present in the final processed data.
+
+![Average Temperature by City](outputs/avg_temperature_by_city.png)

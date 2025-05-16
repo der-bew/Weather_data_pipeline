@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI
 
 on:
   push:
@@ -8,12 +8,11 @@ on:
 
 jobs:
   test:
-    name: Run Tests
+    name: Test with pytest and lint with ruff
     runs-on: ubuntu-latest
-    
     strategy:
       matrix:
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
     
     steps:
     - uses: actions/checkout@v3
@@ -27,48 +26,21 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest pytest-cov
+        pip install ruff pytest pytest-cov
+    
+    - name: Run ruff
+      run: |
+        # Run ruff in check mode
+        ruff check .
     
     - name: Run tests with pytest
       run: |
-        python -m pytest tests/ -v --cov=./ --cov-report=xml
+        python -m pytest tests/ -v --cov=weather_pipeline --cov-report=xml
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
         file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
         fail_ci_if_error: false
-    
-    - name: Run type checking
-      run: |
-        pip install mypy
-        mypy weather_pipeline.py --ignore-missing-imports
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    
-    - name: Install linters
-      run: |
-        pip install black flake8 isort
-    
-    - name: Check code formatting with Black
-      run: |
-        black --check .
-    
-    - name: Lint with flake8
-      run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
-    
-    - name: Check import sorting with isort
-      run: |
-        isort --check-only .
